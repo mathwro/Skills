@@ -21,6 +21,8 @@ npx skills add mathwro/Skills --all
 
 To install a skill for all projects and agents, add `--global`. To target particular agents, add one or more `--agent` options.
 
+Project-local installations use `.agents/skills/`, the agent-agnostic canonical directory. The Skills CLI may additionally create integration links for a selected agent; those links are not part of the skill source.
+
 A single skill can also be installed directly:
 
 ```bash
