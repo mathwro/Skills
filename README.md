@@ -2,21 +2,21 @@
 
 A collection of reusable skills for AI coding agents, packaged in the open [Agent Skills](https://agentskills.io/) format.
 
-[![skills.sh](https://skills.sh/b/OWNER/REPOSITORY)](https://skills.sh/OWNER/REPOSITORY)
+[![skills.sh](https://skills.sh/b/mathwro/Skills)](https://skills.sh/mathwro/Skills)
 
 ## Install
 
-After pushing this repository to GitHub, replace `OWNER/REPOSITORY` with its GitHub path:
+Install skills from this repository:
 
 ```bash
 # See the skills available in this repository
-npx skills add OWNER/REPOSITORY --list
+npx skills add mathwro/Skills --list
 
 # Install one skill
-npx skills add OWNER/REPOSITORY --skill SKILL-NAME
+npx skills add mathwro/Skills --skill SKILL-NAME
 
 # Install every skill
-npx skills add OWNER/REPOSITORY --all
+npx skills add mathwro/Skills --all
 ```
 
 To install a skill for all projects and agents, add `--global`. To target particular agents, add one or more `--agent` options.
@@ -24,7 +24,7 @@ To install a skill for all projects and agents, add `--global`. To target partic
 A single skill can also be installed directly:
 
 ```bash
-npx skills add https://github.com/OWNER/REPOSITORY/tree/main/skills/SKILL-NAME
+npx skills add https://github.com/mathwro/Skills/tree/main/skills/SKILL-NAME
 ```
 
 ## Repository layout
