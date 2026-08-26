@@ -1,0 +1,30 @@
+---
+name: skill-name
+description: Describe what this skill does and when an agent should use it.
+# license: Apache-2.0
+# compatibility: Describe required tools, runtime, or network access when needed.
+# metadata:
+#   author: your-name
+#   version: "1.0"
+---
+
+# Skill name
+
+Describe the outcome this skill helps the agent achieve.
+
+## When to use
+
+Use this skill when the task involves ...
+
+## Instructions
+
+1. Inspect the relevant context.
+2. Follow the procedure for this skill.
+3. Verify the result and report important limitations.
+
+## Resources
+
+Link optional material from this skill directory, for example:
+
+- [Reference guide](references/REFERENCE.md)
+- `scripts/helper.py`

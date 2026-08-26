@@ -1,0 +1,21 @@
+# Normalize text files in the repository and check them out with LF endings.
+* text=auto eol=lf
+
+# Windows-native scripts require CRLF when checked out on any platform.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Shell and PowerShell scripts are portable with LF endings.
+*.ps1 text eol=lf
+*.sh text eol=lf
+
+# Common binary assets must never be line-ending normalized.
+*.7z binary
+*.gif binary
+*.ico binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.png binary
+*.webp binary
+*.zip binary
