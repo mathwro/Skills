@@ -29,6 +29,13 @@ A single skill can also be installed directly:
 npx skills add https://github.com/mathwro/Skills/tree/main/skills/SKILL-NAME
 ```
 
+## Included skills
+
+| Skill | Purpose |
+| --- | --- |
+| [`choosing-branch-structure`](skills/choosing-branch-structure/SKILL.md) | Select the smallest reviewable branch, stack, or worktree topology before a persistent repository change. |
+| [`commit-and-document`](skills/commit-and-document/SKILL.md) | Finalize completed repository work as a safe, reviewable commit. |
+
 ## Repository layout
 
 ```text
