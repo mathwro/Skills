@@ -46,7 +46,9 @@ For a linear stack, list branches trunk-first. Each layer must be independently 
 - For an ordinary branch, create a focused branch using the repository's naming convention. If none exists, use `feature/<topic>`.
 - For a linear stack, hand off stack creation, navigation, rebasing, submission, and merge behavior to `gh-stack`.
 - For independent work, do not place unrelated changes in the same stack merely because they happen at the same time.
-- Do not create a commit, push, pull request, merge, or release merely from this decision. Those actions require their own user instruction and workflow.
+- Commit completed, verified work before finishing or handing it back, unless the user explicitly requests uncommitted changes. Stage only changes owned by the task, preserve unrelated user work, and report commit IDs and verification results. If verification or committing fails, report the blocker and remaining changes rather than claiming completion.
+- Commit incrementally at coherent, verified milestones rather than accumulating an entire large feature into one final commit. Keep each commit focused on one logical change, including its relevant tests and documentation. Include both checkpoint commits and the committed-handoff requirement in agent assignments. A small, cohesive feature may need only one commit.
+- Pushing, opening a pull request, merging, and releasing still require their own user instruction and workflow.
 - Preserve a dirty worktree. Do not move, discard, stash, or overwrite user changes to force a branch decision.
 
 ## Parallel features
