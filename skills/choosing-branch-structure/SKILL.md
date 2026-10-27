@@ -46,8 +46,14 @@ For a linear stack, list branches trunk-first. Each layer must be independently 
 - For an ordinary branch, create a focused branch using the repository's naming convention. If none exists, use `feature/<topic>`.
 - For a linear stack, hand off stack creation, navigation, rebasing, submission, and merge behavior to `gh-stack`.
 - For independent work, do not place unrelated changes in the same stack merely because they happen at the same time.
-- Do not create a commit, push, pull request, merge, or release merely from this decision. Those actions require their own user instruction and workflow.
+- Commit completed, verified work before finishing or handing it back, unless the user explicitly requests uncommitted changes. Stage only changes owned by the task, preserve unrelated user work, and report commit IDs and verification results. If verification or committing fails, report the blocker and remaining changes rather than claiming completion.
+- Commit incrementally at coherent, verified milestones rather than accumulating an entire large feature into one final commit. Keep each commit focused on one logical change, including its relevant tests and documentation. Include both checkpoint commits and the committed-handoff requirement in agent assignments. A small, cohesive feature may need only one commit.
+- Pushing, opening a pull request, merging, and releasing still require their own user instruction and workflow.
 - Preserve a dirty worktree. Do not move, discard, stash, or overwrite user changes to force a branch decision.
+
+## Parallel features
+
+When multiple features can be developed independently in parallel, create a branch in a separate worktree for each feature and dispatch their agents concurrently. Worktrees isolate edits while keeping each feature independently reviewable. Give each agent its worktree path, bounded scope, and acceptance criteria; choose an available agent/model sized to the task's complexity: lightweight for small, mechanical changes, stronger reasoning for large or uncertain work. Split large features only at independent boundaries; resolve shared prerequisites before dispatch.
 
 ## Examples
 
@@ -67,4 +73,15 @@ Reason: The API depends on the schema and the UI depends on the API.
 Branches: main <- feature/schema <- feature/api <- feature/ui
 Worktrees: current checkout
 Next: initialize the stack at feature/schema before editing.
+```
+
+```text
+Request: "Add a CSV download button using the existing endpoint and resumable uploads; develop both in parallel."
+Branch decision: separate branches
+Reason: Neither feature depends on the other, so each can be implemented and reviewed independently.
+Branches: main <- feature/csv-download; main <- feature/resumable-uploads
+Worktrees: ../csv-download; ../resumable-uploads
+Next: create both branches and worktrees from main, then dispatch concurrently:
+  - CSV button: lightweight agent in ../csv-download for the small, well-defined UI change.
+  - Resumable uploads: stronger reasoning agent in ../resumable-uploads for storage and recovery design and implementation.
 ```
